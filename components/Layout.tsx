@@ -20,7 +20,7 @@ const Layout = ({ children, title, description }: Props): JSX.Element => {
         description={description}
         openGraph={{ title, description }}
       />
-      <main className="bg-lightBg dark:bg-darkBg relative h-full  min-h-screen  w-full font-Montserrat ">
+      <main className="bg-lightBg dark:bg-darkBg relative h-full  min-h-screen  w-full overflow-hidden font-Montserrat">
         <main className="">{children}</main>
       </main>
     </div>

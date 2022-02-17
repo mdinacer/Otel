@@ -1,10 +1,10 @@
 export default function Contact() {
   return (
-    <div className=" flex h-full min-h-[50vh] w-full items-start justify-center bg-[#EEEEEE] py-14">
+    <div className=" flex h-full min-h-[50vh] w-full items-start justify-center bg-[#EEEEEE] px-10 py-14 sm:px-0">
       <div className="container mx-auto">
         <p className=" pb-14 text-3xl font-bold uppercase">OTel</p>
-        <div className="flex w-full flex-row justify-between ">
-          <div className="flex flex-row gap-14 text-base ">
+        <div className="flex w-full flex-col justify-between sm:flex-row ">
+          <div className=" flex flex-col gap-14 text-xl sm:mx-0 sm:flex-row sm:text-base ">
             <ul className=" flex list-none flex-col gap-2">
               {listLeft.map((item, index) => (
                 <li key={index} className="list-item">
@@ -27,10 +27,10 @@ export default function Contact() {
               ))}
             </ul>
           </div>
-          <div className="flex w-auto flex-col items-start gap-4">
+          <div className="mt-10 flex w-auto flex-col items-start gap-4 sm:mt-0">
             <p className=" text-base">Newsletter</p>
             <input
-              className="w-full min-w-[32rem] border-b border-b-black bg-transparent py-1"
+              className="w-full border-b border-b-black bg-transparent py-1 sm:min-w-[32rem]"
               name="email"
               type={'email'}
               placeholder="Enter you email address text-black"

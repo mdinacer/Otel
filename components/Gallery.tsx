@@ -1,14 +1,8 @@
-import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useRef } from 'react'
 
 export default function Gallery() {
-  const ref = useRef(null)
   return (
-    <div
-      ref={ref}
-      className=" flex h-full min-h-screen w-full items-center justify-center py-28 "
-    >
+    <div className=" flex h-full min-h-screen w-full items-center justify-center py-14  sm:py-28 ">
       <div className="container mx-auto flex flex-col gap-5">
         <p className=" max-w-xs text-4xl ">Our latest Instagrams</p>
 
@@ -32,17 +26,12 @@ export default function Gallery() {
           </div>
         </button>
 
-        <div className=" w-full  overflow-y-scroll  scrollbar-hide">
-          <motion.div
-            drag={'x'}
-            dragConstraints={{ left: -2000, right: 0 }}
-            className="grid grid-flow-col gap-4"
-            dragElastic={0.2}
-          >
+        <div className=" max-h-[70vh] w-full overflow-y-scroll  scrollbar-hide sm:max-h-full">
+          <div className="grid grid-flow-row gap-4 sm:grid-flow-col">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
               <div
                 key={item}
-                className="relative flex h-[50vh] w-[20vw] items-center justify-center rounded-md bg-[#2C3333]  even:bg-[#495371]"
+                className="relative flex h-[30vh] w-full items-center justify-center rounded-md bg-[#2C3333] even:bg-[#495371] sm:h-[50vh]  sm:w-[20vw]"
               >
                 <div className="relative h-1/2 w-full">
                   <Image
@@ -54,7 +43,7 @@ export default function Gallery() {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

@@ -2,11 +2,11 @@ import Image from 'next/image'
 
 export default function Offers() {
   return (
-    <div className=" flex h-full min-h-screen w-full select-none flex-row justify-evenly bg-blue-500">
+    <div className=" flex h-full min-h-screen w-full select-none flex-col justify-evenly bg-blue-500 sm:flex-row">
       {offers.map((offer) => (
         <div
           key={offer.id}
-          className=" container flex w-1/3 flex-col items-center gap-6 bg-[#FBF8F1] py-28 even:bg-[#323232] even:text-white"
+          className=" container flex w-full flex-col items-center gap-6 bg-[#FBF8F1] py-10 even:bg-[#323232] even:text-white sm:w-1/3 sm:py-28"
         >
           <div className="flex-initial ">
             <p className="text-base uppercase">{offer.location}</p>
@@ -14,8 +14,8 @@ export default function Offers() {
           <div className="flex-initial ">
             <p className=" text-5xl">{offer.title}</p>
           </div>
-          <div className="relative flex flex-auto items-center justify-center ">
-            <div className="relative h-[30vh] w-[20vw]">
+          <div className=" relative flex-auto items-center justify-center sm:flex ">
+            <div className="relative h-[30vh] w-[80vw] sm:w-[20vw]">
               <Image
                 src={'/assets/images/house2.png'}
                 layout="fill"
@@ -26,7 +26,7 @@ export default function Offers() {
           </div>
           <div className="flex-initial text-2xl font-bold">{`$ ${offer.price} /night`}</div>
           <div className="flex-initial ">
-            <p className=" min-h-[10vh] max-w-md text-center text-lg leading-normal">
+            <p className=" min-h-[10vh] max-w-sm px-5 text-center text-lg leading-normal sm:max-w-md sm:px-0">
               {offer.description}
             </p>
           </div>
